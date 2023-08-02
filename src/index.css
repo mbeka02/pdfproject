@@ -1,0 +1,14 @@
+.container {
+  border: solid 1px red;
+  width: 100rem;
+  height: 100rem;
+}
+
+.wrapper {
+  display: grid;
+}
+.img {
+  width: 8rem;
+  height: 8rem;
+  z-index: 100;
+}
