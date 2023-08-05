@@ -25,15 +25,35 @@ const customPlugin = (): Plugin => {
       return;
     }*/
 
-    const layer = e.container;
+    // const layer = e.container;
+
     let image = document.createElement("img");
+    //insert motion.img that can be dragged
+    //image = motion.img;
+
     image.draggable = true;
     image.id = "draggable";
-    //image.ondrag = (e) => e.dataTransfer?.setData();
+    //image.ondrag = (e) => e.
     image.onclick = (e) => console.log("click");
+    image.ondragstart = (e) => console.log("dragstart");
+    image.ondragend = (e) => console.log("dragend");
+    image.ondragover = (e) => console.log("dragover");
+    image.ondragenter = (e) => console.log("dragenter");
+    image.ondragleave = (e) => console.log("dragleave");
+    image.ondrop = (e) => console.log("drop");
+    //track x and y coordinates
+    image.onmousemove = (e) => {
+      console.log("x: " + e.clientX + " y: " + e.clientY);
+    };
     image.src = icon;
     image.className = "img";
-    layer?.appendChild(image);
+    const annotationLayer = document.querySelectorAll(
+      ".rpv-core__annotation-layer"
+    ) as NodeListOf<HTMLElement>;
+
+    annotationLayer.forEach((layer) => {
+      layer.appendChild(image);
+    });
 
     // Return if the canvas isn't rendered completely
     /*if (e.status !== LayerRenderStatus.DidRender) {
