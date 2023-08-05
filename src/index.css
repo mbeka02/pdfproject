@@ -12,3 +12,6 @@
   height: 8rem;
   z-index: 100;
 }
+.rb{
+  border: solid 1px red;
+}
