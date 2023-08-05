@@ -39,7 +39,7 @@ const CustomPageRender: React.FC<{
         <motion.img
           src={icon}
           drag="x"
-          onDrag={(event, info) => {
+          onDrag={(_, info) => {
             console.log(info.point.x, info.point.y);
           }}
           onClick={() => console.log("clicked")}

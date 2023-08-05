@@ -4,7 +4,7 @@ import { Worker, Viewer } from "@react-pdf-viewer/core";
 import pdf from "./pdf/assembly_tutorial.pdf";
 //import DrawCanvasExample from "./Draw";
 //import ThumbnailExample from "./Thumbnails";
-import CustomPageRender from "./Render";
+//import CustomPageRender from "./Render";
 import customPlugin from "./Draw";
 
 // basic styling
