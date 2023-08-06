@@ -4,8 +4,8 @@ import { Worker, Viewer } from "@react-pdf-viewer/core";
 import pdf from "./pdf/assembly_tutorial.pdf";
 //import DrawCanvasExample from "./Draw";
 //import ThumbnailExample from "./Thumbnails";
-//import CustomPageRender from "./Render";
-import customPlugin from "./Draw";
+import CustomPageRender from "./Rendering";
+import customPlugin from "./Plugin";
 
 // basic styling
 import "@react-pdf-viewer/core/lib/styles/index.css";
@@ -20,16 +20,11 @@ function App() {
   return (
     <>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-        {
-          /*  <DrawCanvasExample fileUrl={pdf} />}*/
-
-          <Viewer
-            fileUrl={pdf}
-            plugins={[defaultLayoutPluginInstance, customPluginInstance]}
-            // renderPage={(props) => <CustomPageRender renderPageProps={props} />}
-          />
-        }
-        {/*  <ThumbnailExample fileUrl={pdf} /> */}
+        <Viewer
+          fileUrl={pdf}
+          plugins={[defaultLayoutPluginInstance, customPluginInstance]}
+          renderPage={(props) => <CustomPageRender renderPageProps={props} />}
+        />
       </Worker>
     </>
   );
