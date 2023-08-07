@@ -1,4 +1,4 @@
-import { Plugin, PluginOnAnnotationLayerRender } from "@react-pdf-viewer/core";
+import { Plugin } from "@react-pdf-viewer/core";
 //import { createRoot } from "react-dom/client";
 import Customcomponent from "./Image";
 
@@ -7,7 +7,7 @@ import Customcomponent from "./Image";
 import { createRoot } from "react-dom/client";
 
 const customPlugin = (): Plugin => {
-  const onAnnotationLayerRender = (e: PluginOnAnnotationLayerRender) => {
+  const onAnnotationLayerRender = () => {
     /*if (e.status !== LayerRenderStatus.DidRender) {
       return;
     }*/
