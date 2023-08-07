@@ -1,5 +1,5 @@
 import { PanInfo, motion } from "framer-motion";
-import icon from "./images/IMG_20230725_152854_464.jpg";
+
 import { useState } from "react";
 
 type Props = {
@@ -18,6 +18,15 @@ const Customcomponent = ({ layer_x, layer_y }: Props) => {
     x: 0,
     y: 0,
   });
+  /*const images = [
+    "/image1.jpg",
+    "/image2.jpg",
+    "/image3.jpg",
+    "/image4.jpg",
+    "/image5.jpg",
+    "image6.jpg",
+  ];*/
+  // const randomImage = images[Math.floor(Math.random() * images.length)];
   const getImagePositionRelativeToPage = (
     e: MouseEvent | TouchEvent | PointerEvent
   ) => {
@@ -37,7 +46,7 @@ const Customcomponent = ({ layer_x, layer_y }: Props) => {
 
   return (
     <motion.img
-      src={icon}
+      src="/image2.jpg"
       className="img"
       id="draggable"
       style={{
