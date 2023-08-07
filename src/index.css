@@ -7,10 +7,7 @@
   height: 100%;
   z-index: 10;
 }
-.img {
-  width: 8rem;
-  height: 8rem;
-}
+
 .rb {
   border: solid 1px red;
 }
