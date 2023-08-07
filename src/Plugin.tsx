@@ -7,17 +7,41 @@ import icon from "./images/IMG_20230725_152854_464.jpg";
 
 import { motion } from "framer-motion";
 
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
-/*const getImagePositionRelativeToPage = (
-  e: MouseEvent | TouchEvent | PointerEvent
-) => {
-  const image = e.target as HTMLImageElement;
-  const rect = image.getBoundingClientRect();
-  const x = rect.left;
-  const y = rect.top;
-  console.log(x, y);
-};*/
+type Props = {
+  layer_x: number;
+  layer_y: number;
+};
+
+const Customcomponent = ({ layer_x, layer_y }: Props) => {
+  const getImagePositionRelativeToPage = (
+    e: MouseEvent | TouchEvent | PointerEvent
+  ) => {
+    const image = e.target as HTMLImageElement;
+    const rect = image.getBoundingClientRect();
+    const x = rect.left - layer_x;
+    const y = rect.top - layer_y;
+    console.log(x, y);
+  };
+  return (
+    <motion.img
+      src={icon}
+      className="img"
+      id="draggable"
+      style={{
+        zIndex: 100,
+      }}
+      drag
+      //track x and y coordinates
+      onDrag={(event, _) => {
+        getImagePositionRelativeToPage(event);
+      }}
+
+      //limit to the page width and document height
+    />
+  );
+};
 
 const customPlugin = (): Plugin => {
   const onAnnotationLayerRender = (e: PluginOnAnnotationLayerRender) => {
@@ -32,30 +56,16 @@ const customPlugin = (): Plugin => {
       ".rpv-core__annotation-layer"
     ) as NodeListOf<HTMLElement>;
 
-    annotationLayers.forEach((layer) => {
+    annotationLayers.forEach((layer, index) => {
       //render annotation layer with the draggableImage component
       layer.style.border = "1px red solid";
-      //const root_layer = createRoot(layer!);
-      //root_layer.render(draggableImage());
-      //temporary fix
-      ReactDOM.render(
-        <motion.img
-          src={icon}
-          className="img"
-          id="draggable"
-          drag
-          //track x and y coordinates
-          onDrag={(event, info) => {
-            // console.log(info.point.x, info.point.y);
-            // getImagePositionRelativeToPage(event);
-          }}
-          //limit to the page width and document height
-        />,
-        layer
-      );
+      const pos = layer.getBoundingClientRect();
+      const y = pos.top;
+      const x = pos.left;
 
-      const domNode = layer.querySelector("#draggable");
-      console.log(domNode);
+      // a temporary fix , maybe I should try using a portal?
+      const layerRoot = createRoot(layer!);
+      layerRoot.render(<Customcomponent layer_x={x} layer_y={y} />);
     });
   };
 

@@ -1,7 +1,7 @@
 import "./App.css";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 //import { useEffect } from "react";
-import pdf from "./pdf/assembly_tutorial.pdf";
+import pdf from "./pdf/ID.pdf";
 //import DrawCanvasExample from "./Draw";
 //import ThumbnailExample from "./Thumbnails";
 import CustomPageRender from "./Rendering";

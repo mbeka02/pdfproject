@@ -14,7 +14,7 @@ const CustomPageRender: React.FC<{
   }, [renderPageProps.canvasLayerRendered, renderPageProps.textLayerRendered]);
 
   return (
-    <>
+    <div className="wrapper">
       {/* Use the canvas and/or text layers */}
       {renderPageProps.canvasLayer.children}
 
@@ -22,7 +22,7 @@ const CustomPageRender: React.FC<{
 
       {renderPageProps.textLayer.children}
       {renderPageProps.annotationLayer.children}
-    </>
+    </div>
   );
 };
 export default CustomPageRender;

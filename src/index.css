@@ -1,16 +1,15 @@
-.container {
-  border: solid 1px red;
-  width: 100rem;
-  height: 100rem;
-}
-
 .wrapper {
+  position: relative;
   display: grid;
+  border: solid 1px blue;
+
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 .img {
   width: 8rem;
   height: 8rem;
-  z-index: 1000;
 }
 .rb {
   border: solid 1px red;
