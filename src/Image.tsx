@@ -59,8 +59,8 @@ const Customcomponent = ({ layer_x, layer_y }: Props) => {
               //placeholder for now , the idea is to limit the movement of the image when it is not being dragged while retaining the same position
               left: coordinates.x,
               top: coordinates.y,
-              right: coordinates.x + dimensions.width,
-              bottom: coordinates.y + dimensions.height,
+              right: coordinates.x,
+              bottom: coordinates.y,
             }
       }
 
