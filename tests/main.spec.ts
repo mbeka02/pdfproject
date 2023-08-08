@@ -5,7 +5,7 @@ import { test, expect } from "@playwright/test";
 //coordinates of the image ? not sure on this one
 
 //work in progress
-//seems to be workinf fine but the image clipping behind the page issue is still there
+//seems to be working fine but the image clipping behind the page issue is still there
 test("test", async ({ page }) => {
   await page.goto("https://pdfproject.vercel.app/");
   //never wait for timeout in production
