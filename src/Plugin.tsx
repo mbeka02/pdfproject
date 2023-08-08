@@ -5,7 +5,6 @@ import Customcomponent from "./Image";
 // Plugins
 
 import { createRoot } from "react-dom/client";
-import { createPortal } from "react-dom";
 
 const customPlugin = (): Plugin => {
   const onAnnotationLayerRender = () => {
