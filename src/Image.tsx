@@ -39,9 +39,11 @@ const Customcomponent = ({ layer }: Props) => {
     const rect = image.getBoundingClientRect();
     const x = rect.left - layer_x;
     const y = rect.top - layer_y;
+    //set the coordinates , needed to maintain the position of the image when it is not being dragged
     setCoordinates({ x, y });
     console.log(x, y);
   };
+  //resize the image
   const resizeImage = (info: PanInfo) => {
     setDimensions({
       width: dimensions.width + info.delta.x,
@@ -56,7 +58,7 @@ const Customcomponent = ({ layer }: Props) => {
       id="draggable"
       style={{
         zIndex: 100,
-        cursor: isDragging ? "pointer" : "grab",
+        cursor: isDragging ? "pointer" : "se-resize",
         width: dimensions.width,
         height: dimensions.height,
       }}
@@ -65,6 +67,7 @@ const Customcomponent = ({ layer }: Props) => {
       onDrag={(event, info) => {
         isDragging ? getImagePositionRelativeToPage(event) : resizeImage(info);
       }}
+      //toggle between dragging and resizing
       onDoubleClick={() => setIsDragging((prev) => !prev)}
       dragConstraints={
         isDragging
