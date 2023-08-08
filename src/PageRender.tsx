@@ -18,9 +18,8 @@ const CustomPageRender: React.FC<{
       {/* Use the canvas and/or text layers */}
       {renderPageProps.canvasLayer.children}
 
-      {/* Your custom components on page ... */}
-
       {renderPageProps.textLayer.children}
+      {/* last layer since I wan the images here ... */}
       {renderPageProps.annotationLayer.children}
     </div>
   );

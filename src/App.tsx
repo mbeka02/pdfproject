@@ -1,10 +1,9 @@
 import "./App.css";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
-//import { useEffect } from "react";
-import pdf from "./pdf/ID.pdf";
-//import DrawCanvasExample from "./Draw";
-//import ThumbnailExample from "./Thumbnails";
-import CustomPageRender from "./Rendering";
+//pdf document
+import pdf from "./pdf/25885762.pdf";
+
+import CustomPageRender from "./PageRender";
 import customPlugin from "./Plugin";
 
 // basic styling
