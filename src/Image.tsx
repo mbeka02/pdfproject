@@ -3,11 +3,10 @@ import { PanInfo, motion } from "framer-motion";
 import { useState } from "react";
 
 type Props = {
-  layer_x: number;
-  layer_y: number;
+  layer: HTMLElement;
 };
 
-const Customcomponent = ({ layer_x, layer_y }: Props) => {
+const Customcomponent = ({ layer }: Props) => {
   const [isDragging, setIsDragging] = useState(true);
   // const [isResizing, setIsResizing] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -30,6 +29,12 @@ const Customcomponent = ({ layer_x, layer_y }: Props) => {
   const getImagePositionRelativeToPage = (
     e: MouseEvent | TouchEvent | PointerEvent
   ) => {
+    //for the layer
+    const pos = layer.getBoundingClientRect();
+    const layer_x = pos.left;
+    const layer_y = pos.top;
+    //perhaps I should also consider any offset caused by the scroll bar
+    //for the image
     const image = e.target as HTMLImageElement;
     const rect = image.getBoundingClientRect();
     const x = rect.left - layer_x;

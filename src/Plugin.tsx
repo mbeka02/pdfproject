@@ -22,13 +22,10 @@ const customPlugin = (): Plugin => {
     annotationLayers.forEach((layer) => {
       //render annotation layer with the draggableImage component
       layer.style.border = "1px red solid";
-      const pos = layer.getBoundingClientRect();
-      const y = pos.top;
-      const x = pos.left;
 
       // a temporary fix , maybe I should try using a portal?
       const layerRoot = createRoot(layer!);
-      layerRoot.render(<Customcomponent layer_x={x} layer_y={y} />);
+      layerRoot.render(<Customcomponent layer={layer} />);
     });
   };
 
