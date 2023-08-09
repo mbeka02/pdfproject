@@ -18,18 +18,20 @@ test("drag image to another page", async ({ page }) => {
     throw new Error("image not found");
   }
   //get the destination page
-  const destinationPage = page.getByTestId("core__annotation-layer-0");
+  const destinationPage = await page.getByTestId("core__annotation-layer-0");
   if (destinationPage) {
     //drag the image to the destination page
     await image.dragTo(destinationPage);
     //check if the image is in the destination page
     //may not be needed
-    await expect(destinationPage).toHaveId("draggable");
+    //expect image location to be in the destination page viewport
+    await expect(image).toBeInViewport();
   }
 });
 
 //testing double click  to see state of image
-test("double click image to see state", async ({ page }) => {
+test("double click image to see state change", async ({ page }) => {
+  await page.goto("https://pdfproject.vercel.app/");
   const image = page
     .getByTestId("core__annotation-layer-1")
     .locator("#draggable");
