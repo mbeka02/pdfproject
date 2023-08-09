@@ -27,3 +27,21 @@ test("drag image to another page", async ({ page }) => {
     await expect(destinationPage).toHaveId("draggable");
   }
 });
+
+//testing double click  to see state of image
+test("double click image to see state", async ({ page }) => {
+  const image = page
+    .getByTestId("core__annotation-layer-1")
+    .locator("#draggable");
+  if (!image) {
+    throw new Error("image not found");
+  }
+  //double click the image
+  await image.dblclick();
+  //by default the images are in the dragging state
+  //expect class to be changed after double click.
+  await expect(image).toHaveClass("resizable");
+  //switch back to dragging state
+  await image.dblclick();
+  await expect(image).toHaveClass("draggable");
+});

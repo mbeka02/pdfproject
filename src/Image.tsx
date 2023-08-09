@@ -54,7 +54,7 @@ const Customcomponent = ({ layer }: Props) => {
   return (
     <motion.img
       src="/image2.jpg"
-      className="img"
+      className={isDragging ? "draggable" : "resizable"}
       id="draggable"
       style={{
         zIndex: 100,
