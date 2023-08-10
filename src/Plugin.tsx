@@ -18,11 +18,19 @@ const customPlugin = (): Plugin => {
     const annotationLayers = document.querySelectorAll(
       ".rpv-core__annotation-layer"
     ) as NodeListOf<HTMLElement>;
+    /*const innerPageLayers = document.querySelectorAll(
+      ".rpv-core__inner-page"
+    ) as NodeListOf<HTMLElement>;
+
+    innerPageLayers.forEach((layer) => {
+      layer.style.zIndex = "0";
+    });*/
 
     annotationLayers.forEach((layer) => {
       //render annotation layer with the draggableImage component
       //layer.style.border = "1px red solid";
       //layer.style.height = "100%";
+      //layer.style.zIndex = "10";
 
       // a temporary fix , maybe I should try using a portal?
       const layerRoot = createRoot(layer!);

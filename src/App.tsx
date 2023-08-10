@@ -4,6 +4,7 @@ import { Worker, Viewer } from "@react-pdf-viewer/core";
 import pdf from "./pdf/25885762.pdf";
 
 import CustomPageRender from "./PageRender";
+
 import customPlugin from "./Plugin";
 
 // basic styling

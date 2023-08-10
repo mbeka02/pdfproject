@@ -11,3 +11,8 @@
 /*.rb {
   border: solid 1px red;
 }*/
+.test {
+  background-color: green;
+  color: white;
+  width: 10rem;
+}
