@@ -86,7 +86,7 @@ test.describe("resizing", () => {
     //resize image
 
     //place mouse at the center of the image
-    const leftX = imageSizeBefore.x + imageSizeBefore.width - 50;
+    // const leftX = imageSizeBefore.x + imageSizeBefore.width - 50;
     const centerX = imageSizeBefore.x + imageSizeBefore.width / 2;
     const centerY = imageSizeBefore.y + imageSizeBefore.height / 2;
     await page.mouse.move(centerX, centerY);

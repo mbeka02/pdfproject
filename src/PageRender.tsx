@@ -19,7 +19,7 @@ const CustomPageRender: React.FC<{
       {renderPageProps.canvasLayer.children}
 
       {renderPageProps.textLayer.children}
-      {/* last layer since I wan the images here ... */}
+      {/* last layer, images go here ... */}
       {renderPageProps.annotationLayer.children}
     </div>
   );

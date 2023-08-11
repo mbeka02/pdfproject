@@ -39,7 +39,7 @@ const Customcomponent = ({ layer }: Props) => {
     const rect = image.getBoundingClientRect();
     const x = rect.left - layer_x;
     const y = rect.top - layer_y;
-    //set the coordinates , needed to maintain the position of the image when it is not being dragged
+    //set the coordinates ,this is needed to maintain the position of the image when it is not being dragged
     setCoordinates({ x, y });
     console.log(x, y);
   };
@@ -73,15 +73,14 @@ const Customcomponent = ({ layer }: Props) => {
         isDragging
           ? false
           : {
-              //placeholder for now , the idea is to limit the movement of the image when it is not being dragged while retaining the same position
+              /* the idea is to limit the movement of the image when it is 
+              not being dragged while retaining the same position*/
               left: coordinates.x,
               top: coordinates.y,
               right: coordinates.x,
               bottom: coordinates.y,
             }
       }
-
-      //limit to the page width and document height
     />
   );
 };
