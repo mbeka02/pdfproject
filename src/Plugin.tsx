@@ -19,11 +19,14 @@ const customPlugin = (): Plugin => {
       ".rpv-core__annotation-layer"
     ) as NodeListOf<HTMLElement>;
     /*const innerPageLayers = document.querySelectorAll(
-      ".rpv-core__inner-page"
+      ".rpv-core__page-layer"
     ) as NodeListOf<HTMLElement>;
 
     innerPageLayers.forEach((layer) => {
+      layer.style.border = " red";
       layer.style.zIndex = "0";
+      layer.style.position = "absolute";
+      layer.style.transform = "translate(0,0)";
     });*/
 
     annotationLayers.forEach((layer) => {

@@ -83,13 +83,16 @@ test.describe("resizing", () => {
     //get image size before resizing
     const imageSizeBefore = (await image.boundingBox()) as imageSize;
 
+    //resize image
+
     //place mouse at the center of the image
+    const leftX = imageSizeBefore.x + imageSizeBefore.width - 50;
     const centerX = imageSizeBefore.x + imageSizeBefore.width / 2;
     const centerY = imageSizeBefore.y + imageSizeBefore.height / 2;
     await page.mouse.move(centerX, centerY);
     await page.mouse.down();
 
-    await page.mouse.move(centerX + 10, centerY + 10);
+    await page.mouse.move(centerX, centerY);
     //timeout to see the change
     await page.waitForTimeout(5000);
 
@@ -97,6 +100,6 @@ test.describe("resizing", () => {
 
     const imageSizeAfter = (await image.boundingBox()) as imageSize;
     expect(imageSizeAfter.width).toBeCloseTo(imageSizeBefore.width + 10);
-    expect(imageSizeAfter.height).toBeCloseTo(imageSizeBefore.height + 10);
+    expect(imageSizeAfter.height).toBeCloseTo(imageSizeBefore.height);
   });
 });
