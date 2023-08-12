@@ -6,7 +6,7 @@ type Props = {
   layer: HTMLElement;
 };
 
-const Customcomponent = ({ layer }: Props) => {
+const CustomImageComponent = ({ layer }: Props) => {
   const [isDragging, setIsDragging] = useState(true);
   // const [isResizing, setIsResizing] = useState(false);
   const [dimensions, setDimensions] = useState({
@@ -57,7 +57,8 @@ const Customcomponent = ({ layer }: Props) => {
       className={isDragging ? "draggable" : "resizable"}
       id="draggable"
       style={{
-        zIndex: 100,
+        // zIndex: 100,
+        //position: "relative",
         cursor: isDragging ? "pointer" : "se-resize",
         width: dimensions.width,
         height: dimensions.height,
@@ -84,4 +85,4 @@ const Customcomponent = ({ layer }: Props) => {
     />
   );
 };
-export default Customcomponent;
+export default CustomImageComponent;

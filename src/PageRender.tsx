@@ -16,9 +16,11 @@ const CustomPageRender: React.FC<{
   return (
     <div className="wrapper">
       {/* Use the canvas and/or text layers */}
+
       {renderPageProps.canvasLayer.children}
 
       {renderPageProps.textLayer.children}
+
       {/* last layer, images go here ... */}
       {renderPageProps.annotationLayer.children}
     </div>

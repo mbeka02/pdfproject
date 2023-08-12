@@ -1,6 +1,6 @@
 import { Plugin } from "@react-pdf-viewer/core";
 
-import Customcomponent from "./Image";
+import CustomImageComponent from "./Image";
 
 import { createRoot } from "react-dom/client";
 
@@ -17,14 +17,14 @@ const customPlugin = (): Plugin => {
       ".rpv-core__annotation-layer"
     ) as NodeListOf<HTMLElement>;
 
-    /*const innerPageLayers = document.querySelectorAll(
+    /* const innerPageLayers = document.querySelectorAll(
       ".rpv-core__inner-page"
     ) as NodeListOf<HTMLElement>;
     const pageLayers = document.querySelectorAll(
       ".rpv-core__page-layer"
-    ) as NodeListOf<HTMLElement>;*/
+    ) as NodeListOf<HTMLElement>;
 
-    /*  innerPageLayers.forEach((layer) => {
+    innerPageLayers.forEach((layer) => {
       layer.style.position = "static";
       layer.style.transform = "none";
     });
@@ -36,7 +36,7 @@ const customPlugin = (): Plugin => {
       // a temporary fix , maybe I should try using a portal?
       const layerRoot = createRoot(layer!);
 
-      layerRoot.render(<Customcomponent layer={layer} />);
+      layerRoot.render(<CustomImageComponent layer={layer} />);
     });
   };
 
