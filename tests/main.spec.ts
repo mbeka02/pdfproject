@@ -12,10 +12,10 @@ type imageSize = {
   width: number;
   height: number;
 };
-
-//dragging image to next and previous page
-//double click and drag to resize
-//coordinates of the image ? not sure on this one
+//dragging image in the same page.
+//dragging image to next and previous page.
+//double click for image state change.
+//image resizing.
 
 test.describe("dragging", () => {
   //testing drag functonality between pages
@@ -72,14 +72,11 @@ test.describe("resizing", () => {
     if (!image) {
       throw new Error("image not found");
     }
-    //get page bouding box and move image to the center of the page
-
-    //move image to the center of the page);
 
     //double click the image to change state to resizable
     await image.dblclick();
     //expect class to be changed after double click.
-    await expect(image).toHaveClass("resizable"), { timeout: 10000 };
+    await expect(image).toHaveClass("resizable");
     //get image size before resizing
     const imageSizeBefore = (await image.boundingBox()) as imageSize;
 

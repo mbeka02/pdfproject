@@ -18,7 +18,6 @@ const customPlugin = (): Plugin => {
     ) as NodeListOf<HTMLElement>;
 
     annotationLayers.forEach((layer) => {
-      // a temporary fix , maybe I should try using a portal?
       const layerRoot = createRoot(layer!);
 
       layerRoot.render(<CustomImageComponent layer={layer} />);

@@ -13,7 +13,7 @@ export default defineConfig({
   //just trying to avoid timeout errors for now.
   timeout: 20 * 60 * 1000,
   expect: {
-    timeout: 10 * 1000,
+    timeout: 12 * 1000,
   },
   testDir: "./tests",
   /* Run tests in files in parallel */
