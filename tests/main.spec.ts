@@ -12,8 +12,8 @@ type imageSize = {
   width: number;
   height: number;
 };
-//dragging image in the same page.
-//dragging image to next and previous page.
+
+//dragging images.
 //double click for image state change.
 //image resizing.
 
