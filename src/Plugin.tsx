@@ -17,21 +17,6 @@ const customPlugin = (): Plugin => {
       ".rpv-core__annotation-layer"
     ) as NodeListOf<HTMLElement>;
 
-    /* const innerPageLayers = document.querySelectorAll(
-      ".rpv-core__inner-page"
-    ) as NodeListOf<HTMLElement>;
-    const pageLayers = document.querySelectorAll(
-      ".rpv-core__page-layer"
-    ) as NodeListOf<HTMLElement>;
-
-    innerPageLayers.forEach((layer) => {
-      layer.style.position = "static";
-      layer.style.transform = "none";
-    });
-    pageLayers.forEach((layer) => {
-      layer.style.position = "static";
-    });*/
-
     annotationLayers.forEach((layer) => {
       // a temporary fix , maybe I should try using a portal?
       const layerRoot = createRoot(layer!);
@@ -44,5 +29,5 @@ const customPlugin = (): Plugin => {
     onAnnotationLayerRender,
   };
 };
-//create new custom plugin instance
+//export plugin
 export default customPlugin;
